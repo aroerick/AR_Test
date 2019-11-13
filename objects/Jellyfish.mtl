@@ -3,5 +3,5 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 0.36 0.36 0.36
-map_Kd outJellyfish.tga
+map_Kd outJellyfish.png
 Ni 1.00
