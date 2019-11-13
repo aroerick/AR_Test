@@ -1,15 +1,24 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
-<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs="sourceType: webcam;" stats>
       <!-- <a-asset-item id="jellyfish-obj" src="./objects/Trout.obj"></a-asset-item>
       <a-asset-item id="jellyfish-mtl" src="./objects/Trout.mtl"></a-asset-item> -->
-      <a-marker-camera preset="hiro">
-        <a-box position="0 0.5 0" material="color: yellow;" scale=".1 .1 .1"></a-box>
-        <a-entity obj-model="obj: url(https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FJellyfish.obj?v=1573686295261); mtl: url(https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FJellyfish.mtl?v=1573686281358)" scale=".1 .1 .1"></a-entity>
-    </a-marker-camera>
+      <a-marker preset="hiro">
+        <a-box
+          position="0 0.5 0"
+          material="color: yellow;"
+          scale=".1 .1 .1"
+        ></a-box>
+        <a-entity
+          obj-model="obj: url(https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FJellyfish.obj?v=1573686295261); mtl: url(https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FJellyfish.mtl?v=1573686579818)"
+          scale=".1 .1 .1"
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
