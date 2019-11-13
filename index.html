@@ -4,9 +4,11 @@
 <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs="sourceType: webcam;">
+      <!-- <a-asset-item id="jellyfish-obj" src="./objects/Trout.obj"></a-asset-item>
+      <a-asset-item id="jellyfish-mtl" src="./objects/Trout.mtl"></a-asset-item> -->
       <a-marker preset="hiro">
-        <!-- <a-box position="0 0.5 0" material="color: yellow;""></a-box> -->
-        <a-entity obj-model="obj: url('/objects/Jellyfish.obj'); mtl: url('/objects/Jellyfish.mtl')"></a-entity>
+        <!-- <a-box position="0 0.5 0" material="color: yellow;" scale=".1 .1 .1"></a-box> -->
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/aroerick/AR_Test/master/objects/Jellyfish.obj?token=AJCLMQNL23I5DURXDFAJ6R252SX32); mtl: url(https://raw.githubusercontent.com/aroerick/AR_Test/master/objects/Jellyfish.mtl?token=AJCLMQJOEI7OPBZGG7SE3AK52SX4M) scale=".1 .1 .1"></a-entity>
     </a-marker>
     <a-entity camera></a-entity>
     </a-scene>
