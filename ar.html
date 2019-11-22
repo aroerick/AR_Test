@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+  <title>Document</title>
+</head>
+<body>
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .6;">
+        <a-assets>
+          <a-asset-item id="jellyfish" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FJellyfish.glb"></a-asset-item>
+          <a-asset-item id="tuna" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FTuna.glb"></a-asset-item>
+          <a-asset-item id="trout" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FTrout.glb"></a-asset-item>
+          <a-asset-item id="salmon" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FSalmon.glb"></a-asset-item>
+        </a-assets>
+        <a-marker type='pattern' url='./patterns/pattern-Gin.patt'>
+          <a-entity gltf-model="#jellyfish" scale="10 10 10" animation-mixer="clip: *;" position="0 0 0 "></a-entity>
+          <a-entity gltf-model="#tuna" scale="10 10 10" animation-mixer="clip: *;" position="1 0 0"></a-entity>
+          <a-entity gltf-model="#trout" scale="10 10 10" animation-mixer="clip: *;" position="-1 0 0"></a-entity>
+          <a-entity gltf-model="#salmon" scale="10 10 10" animation-mixer="clip: *;" position="0 0 0"></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+      </a-scene>
+</body>
+</html>
