@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <!-- <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
-  <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
-  <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam;" stats inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script> -->
+  <script src="https://kit.fontawesome.com/41a9f7bbba.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <body>
+      <!-- debugUIEnabled: false;  style="margin : 0px; overflow: hidden;" -->
+    <!-- <a-scene embedded arjs="sourceType: webcam; patternRatio: .6;" stats inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
       <a-assets>
         <a-asset-item id="jellyfish" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FJellyfish.glb"></a-asset-item>
         <a-asset-item id="tuna" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FTuna.glb"></a-asset-item>
         <a-asset-item id="trout" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FTrout.glb"></a-asset-item>
         <a-asset-item id="salmon" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FSalmon.glb"></a-asset-item>
       </a-assets>
-      <a-marker-camera preset="hiro">
+      <a-marker type='pattern' url='./patterns/pattern-Gin.patt'>
         <a-entity gltf-model="#jellyfish" scale="10 10 10" animation-mixer="clip: *;" position="0 0 0 "></a-entity>
-        <a-entity gltf-model="#tuna" scale="10 10 10" animation-mixer="clip: *;" position="1 0 0 "></a-entity>
-        <a-entity gltf-model="#trout" scale="10 10 10" animation-mixer="clip: *;" position="-1 0 0 "></a-entity>
-        <a-entity gltf-model="#salmon" scale="10 10 10" animation-mixer="clip: *;" position="0 0 0 "></a-entity>
-      </a-marker-camera>
-    </a-scene>
+        <a-entity gltf-model="#tuna" scale="10 10 10" animation-mixer="clip: *;" position="1 0 0"></a-entity>
+        <a-entity gltf-model="#trout" scale="10 10 10" animation-mixer="clip: *;" position="-1 0 0"></a-entity>
+        <a-entity gltf-model="#salmon" scale="10 10 10" animation-mixer="clip: *;" position="0 0 0"></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene> -->
+    <div id="modal-one" class="modal one">
+      <img src="KPMG_Splash.png" width="100%">
+      <div class="blue">
+        <div class="modal-info-container">
+          <h1 class="text">AR Activated Bottle</h1>
+          <p class="text">Experience best enjoyed with sound</p>
+          <button id="continue-button" type="button">Continue<i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id="modal-two" class="modal">
+
+    </div>
   </body>
+  <script>
+    var next = document.getElementById("continue-button");
+    next.onclick = function() {
+      
+    }
+  </script>
 </html>
