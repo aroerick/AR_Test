@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://kit.fontawesome.com/41a9f7bbba.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="styles.css">
   <body>
-    <div id="modal-one" class="modal one" hidden>
+    <div id="main-container" hidden>
       <img id="img-top" src="KPMG_Splash_top.png" width="100%">
       <div id="background-container">
         <img id="img-mid" src="KPMG_Mid.png" width="100%">
         <h2 class="text">Place hangtag in front of bottle</h2>
       </div>
       <img id="img-bot" src="KPMG_Splash_Bot.png" width="100%">
-      <div id="modal-info" class="modal-info-container">
+      <div id="text-container">
         <h1 class="text">AR Activated Bottle</h1>
         <p class="text">experience best enjoyed with sound</p>
       </div>
-      <button id="continue" type="button">Continue<i class="fas fa-chevron-right"></i></button>
+      <button id="continue" type="button">Continue</button>
       <a href="\ar.html">
         <button id="begin" type="button">Begin<i class="fas fa-chevron-right"></i></button>
       </a>
     </div>
   </body>
   <script>
-    // var modalOne = document.getElementById("modal-one");
-    // var modalTwo = document.getElementById("modal-two");
-    var modal = document.getElementsByClassName("modal");
-    var modalInfo = document.getElementById("modal-info");
-    // var blue = document.getElementById("blue");
-    var backgroundContainer = document.getElementById("background-container");
-    var imageBot = document.getElementById("img-bot");
     var continueButton = document.getElementById("continue");
     var beginButton = document.getElementById("begin");
+    var textContainer = document.getElementById("text-container");
+    var imageBot = document.getElementById("img-bot");
+    var backgroundContainer = document.getElementById("background-container");
+
     continueButton.onclick = function() {
       continueButton.style.display = "none";
       beginButton.style.display = "initial";
-      modalInfo.style.bottom = "-100%";
-      // blue.style.display = "none";
+      textContainer.style.bottom = "-100%";
       imageBot.style.top = "1200px";
       backgroundContainer.style.top = "-490px";
-      // imageBot.style.bottom = 0;
     }
   </script>
 </html>
