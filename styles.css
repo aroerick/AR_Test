@@ -75,6 +75,10 @@ button {
   z-index: -1;
   transition: top 1000ms ease-in-out;
 }
+#img-mid {
+  width: 100%;
+  height: auto;
+}
 #img-bot {
   position: absolute;
   top: 665px;

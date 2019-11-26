@@ -10,7 +10,7 @@
       embedded
       artoolkit
       loading-screen="dotsColor: #0072BC; backgroundColor: white;"
-      arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .6;"
+      arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .5;"
       vr-mode-ui="enabled: false"
     >
       <a-assets>
@@ -44,12 +44,13 @@
         ></a-asset-item>
         <a-asset-item
           id="kelp"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FKelpFinal.gltf?v=1574718312130"
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FKelpFinal.gltf"
         ></a-asset-item>
       </a-assets>
       <a-marker
         type="pattern"
-        url="./patterns/pattern-Gin.patt"
+        url="./patterns/pattern-KPMGShell.patt"
+        smooth
       >
         <a-entity
           id="bottle-entity"
