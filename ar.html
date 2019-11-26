@@ -40,56 +40,49 @@
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FKelpFinal.gltf?v=1574718312130"
         ></a-asset-item>
       </a-assets>
-      <a-marker-camera
+      <a-marker
         type="pattern"
         url="./patterns/pattern-Gin.patt"
         emitevents="true"
         registerevents
-        >
+      >
         <a-entity
           gltf-model="#ocean-floor"
           scale="10 10 10"
-          rotation="-90 0 0"
         ></a-entity>
         <a-entity
           gltf-model="#trout"
           scale="0.1 0.1 0.1"
           animation-mixer="clip: *; timeScale: 0.5;"
-          rotation="-90 0 0"
         ></a-entity>
         <a-entity
           gltf-model="#tuna"
           scale="0.1 0.1 0.1"
           animation-mixer="clip: *; timeScale: 0.5;"
-          rotation="-90 0 0"
         ></a-entity>
         <a-entity
           gltf-model="#salmon"
           scale="0.1 0.1 0.1"
           animation-mixer="clip: *; timeScale: 0.5;"
-          rotation="-90 0 0"
         ></a-entity>
         <a-entity
           gltf-model="#jellyfish"
           scale="0.15 0.15 0.15"
           animation-mixer="clip: *; timeScale: 1; loop: pingpong;"
-          rotation="-90 0 0"
           jellyanim
         ></a-entity>
         <a-entity
           gltf-model="#kelp"
           scale="0.1 0.1 0.1"
           animation-mixer="clip: *;"
-          rotation="-90 0 0"
         ></a-entity>
         <a-entity
           gltf-model="#waves"
           scale="0.1 0.1 0.1"
-          animation-mixer="clip: *, timeScale=1;"
-          rotation="-90 0 0"
+          animation-mixer="clip: *; loop: pingpong;"
         ></a-entity>
-      </a-marker-camera>
-      <!-- <a-entity camera></a-entity> -->
+      </a-marker>
+      <a-camera gps-camera></a-camera>
     </a-scene>
     <audio id="voice-over">
       <source src="./objects/KPMG_VO.wav" />
