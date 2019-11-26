@@ -19,33 +19,23 @@
           preload="auto"
           crossorigin="anonymous"
           id="video-test"
-          src="./objects/testVideo.mp4"
+          src="./GinLabel_01.mp4"
         ></video>
         <img id="play-button" src="./icons/Play01.png">
       </a-assets>
-      <!-- <a-entity id="cursor" cursor="rayOrigin: mouse;" raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity> -->
       <a-marker-camera id="marker" eventhandler cursor="rayOrigin: mouse;" emitevents="true" type="pattern" url="./patterns/pattern-Gin.patt">
         <a-video
           class="clickable"
           visible="false"
-          width="1.6"
-          height="0.9"
+          width="1"
+          height="2"
           rotation="-90"
           src="#video-test"
         ></a-video>
         <a-plane class="clickable" src="#play-button" width="1" height="1" rotation="-90"></a-plane>
       </a-marker-camera>
-      <!-- <a-entity camera></a-entity> -->
     </a-scene>
     <script>
-      // var cursor = document.getElementById('cursor')
-
-      // cursor.addEventListener('click', function() {
-      //   sceneVideo.setAttribute('visible', 'true')
-      //   playButton.setAttribute('visible', 'false')
-      //   video.play()
-      // })
-
       AFRAME.registerComponent('eventhandler', {
         init: function() {
           var marker = document.querySelector('#marker')
