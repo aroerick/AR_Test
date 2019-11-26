@@ -10,7 +10,14 @@
     <a-scene
       embedded
       loading-screen="dotsColor: #0072BC; backgroundColor: white;"
-      arjs="debugUIEnabled: false; patternRatio: .75;"
+      arjs="
+        debugUIEnabled: false; 
+        patternRatio: .75; 
+        sourceType: webcam; 
+        detectionMode: mono; 
+        maxDetectionRate: 30; 
+        canvasWidth: 240; 
+        canvasHeight: 180'"
       vr-mode-ui="enabled: false"
     >
       <a-assets>
