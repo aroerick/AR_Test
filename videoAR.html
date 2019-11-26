@@ -21,11 +21,9 @@
           src="./objects/testVideo.mp4"
         ></video>
         <img id="play-button" src="./icons/Play01.png">
-        <!-- <video preload="auto" crossorigin="anonymous" id="video-test" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtestVideo.mp4"></video> -->
       </a-assets>
-      <!-- <a-cursor position="0 0 0"></a-cursor> -->
-      <a-entity id="cursor" cursor="rayOrigin: mouse;" raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
-      <a-marker-camera type="pattern" url="./patterns/pattern-Gin.patt">
+      <!-- <a-entity id="cursor" cursor="rayOrigin: mouse;" raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity> -->
+      <a-marker-camera id="marker" eventhandler cursor="rayOrigin: mouse;" emitevents="true" type="pattern" url="./patterns/pattern-Gin.patt">
         <a-video
           class="clickable"
           visible="false"
@@ -39,15 +37,30 @@
       <!-- <a-entity camera></a-entity> -->
     </a-scene>
     <script>
-      var video = document.querySelector('video')
-      var sceneVideo = document.querySelector('a-video')
-      var cursor = document.getElementById('cursor')
-      var playButton = document.querySelector('a-plane')
+      // var cursor = document.getElementById('cursor')
 
-      cursor.addEventListener('click', function() {
-        sceneVideo.setAttribute('visible', 'true')
-        playButton.setAttribute('visible', 'false')
-        video.play()
+      // cursor.addEventListener('click', function() {
+      //   sceneVideo.setAttribute('visible', 'true')
+      //   playButton.setAttribute('visible', 'false')
+      //   video.play()
+      // })
+
+      AFRAME.registerComponent('eventhandler', {
+        init: function() {
+          var marker = document.querySelector('#marker')
+          var video = document.querySelector('video')
+          var sceneVideo = document.querySelector('a-video')
+          var playButton = document.querySelector('a-plane')
+          
+          marker.addEventListener('click', function(ev, target) {
+              var intersected = ev && ev.detail && ev.detail.intersectedEl
+              if(playButton && intersected === playButton || sceneVideo && intersected === sceneVideo){
+                sceneVideo.setAttribute('visible', 'true')
+                playButton.setAttribute('visible', 'false')
+                video.play()
+              }
+          })
+        }
       })
     </script>
   </body>
