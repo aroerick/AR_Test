@@ -14,35 +14,28 @@
     <a-assets>
       <video preload="auto" crossorigin="anonymous" id="video-test" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtestVideo.mp4"></video>
     </a-assets>
-    <a-marker
+    <a-cursor position="0 0 0"></a-cursor>
+    <a-marker-camera
       type="pattern"
       url="./patterns/pattern-Gin.patt"
-      emitevents
-      registerevents
     >
-      <a-video rotation="-90" src="#video-test"></a-video>
-    </a-marker>
-    <a-entity camera></a-entity>
-    </a-scene>
+      <a-video class="collidable" width="1.6" height="0.9" rotation="-90" src="#video-test"></a-video>
+    </a-marker-camera>
+    <!-- <a-entity camera></a-entity> --    </a-scene>
     <script>
       var video = document.querySelector('video')
-      var marker = document.querySelector('a-marker')
+      var cursor = document.querySelector('a-cursor')
+
       video.addEventListener('loadeddata', function() {
         console.log('data loaded')
       })
       video.addEventListener('progress', function() {
         console.log('progress')
       })
-      AFRAME.registerComponent('registerevents', {
-        init: function() {
-          var marker = this.el
-
-          marker.addEventListener('markerFound', function() {
-            console.log('Marker Found!')
-            video.play();
-          })
-        },
+      cursor.addEventListener('click', function() {
+        video.play();
       })
+
     </script>
   </body>
 </html>
