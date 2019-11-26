@@ -113,7 +113,7 @@
       <a-entity camera></a-entity>
     </a-scene>
     <audio id="voice-over">
-      <source src="./objects/KPMG_VO.wav" />
+      <source src="./objects/KPMG.wav" />
     </audio>
     <script>
       var voiceOver = document.getElementById('voice-over')
@@ -125,7 +125,6 @@
           marker.addEventListener('markerFound', function() {
             console.log('Marker Found!')
             voiceOver.play()
-            marker.parentNode.removeChild(marker)
           })
         },
       })
