@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+    <title>KPMG Blue Ocean Gin AR</title>
+  </head>
+  <body>
+    <a-scene
+      artoolkit
+      arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .6;"
+    >
+    <a-assets>
+      <video preload="auto" crossorigin="anonymous" id="video-test" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtestVideo.mp4"></video>
+    </a-assets>
+    <a-marker
+      type="pattern"
+      url="./patterns/pattern-Gin.patt"
+      emitevents
+      registerevents
+    >
+      <a-video rotation="-90" src="#video-test"></a-video>
+    </a-marker>
+    <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+      var video = document.querySelector('video')
+      var marker = document.querySelector('a-marker')
+      video.addEventListener('loadeddata', function() {
+        console.log('data loaded')
+      })
+      video.addEventListener('progress', function() {
+        console.log('progress')
+      })
+      AFRAME.registerComponent('registerevents', {
+        init: function() {
+          var marker = this.el
+
+          marker.addEventListener('markerFound', function() {
+            console.log('Marker Found!')
+            video.play();
+          })
+        },
+      })
+    </script>
+  </body>
+</html>
