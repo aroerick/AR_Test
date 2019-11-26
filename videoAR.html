@@ -10,7 +10,7 @@
     <a-scene
       artoolkit
       embedded
-      arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .6;"
+      arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .75;"
       loading-screen="dotsColor: #0072BC; backgroundColor: white;"
       vr-mode-ui="enabled: false"
     >
@@ -25,10 +25,11 @@
       </a-assets>
       <a-marker-camera 
         id="marker" 
-        eventhandler cursor="rayOrigin: mouse;" 
+        eventhandler 
+        cursor="rayOrigin: mouse;" 
         emitevents="true" 
         type="pattern" 
-        url="./patterns/pattern-KPMGShell.patt"
+        url="./patterns/pattern-KPMGShell_01.patt"
         fuse="false"
       >
         <a-video
@@ -48,7 +49,7 @@
           var marker = document.querySelector('#marker')
           var video = document.querySelector('video')
           var sceneVideo = document.querySelector('a-video')
-          var playButton = document.querySelector('a-plane')
+          var playButton = document.querySelector('a-plane') 
           
           marker.addEventListener('click', function(ev, target) {
               var intersected = ev && ev.detail && ev.detail.intersectedEl
