@@ -12,7 +12,7 @@
       loading-screen="dotsColor: #0072BC; backgroundColor: white;"
       arjs="
         debugUIEnabled: false; 
-        patternRatio: .75; 
+        patternRatio: .5; 
         sourceType: webcam; 
         detectionMode: mono; 
         maxDetectionRate: 10; 
@@ -29,10 +29,10 @@
           id="jellyfish"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2Fjellyfishsolo2.gltf"
         ></a-asset-item> -->
-        <!-- <a-asset-item
+        <a-asset-item
           id="tuna"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtunaFixed.gltf"
-        ></a-asset-item> -->
+        ></a-asset-item>
         <a-asset-item
           id="trout"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FTroutFinal.gltf"
@@ -53,15 +53,15 @@
           id="ocean-floor"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FOceanFloorPNG.glb"
         ></a-asset-item>
-        <a-asset-item
+        <!-- <a-asset-item
           id="kelp"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FKelpFinal.gltf"
-        ></a-asset-item>
+        ></a-asset-item> -->
       </a-assets>
-      <!-- preset="hiro" -->
+      <!-- type="pattern"
+      url="./patterns/pattern-KPMGShell_01.patt" -->
       <a-marker-camera
-        type="pattern"
-        url="./patterns/pattern-KPMGShell_01.patt"
+        preset="hiro"
         smooth
       >
         <a-plane material="color: clear" scale="1 1 1" position="0 -1 -1">
@@ -94,13 +94,13 @@
             rotation="-90 0 0"
             position="0 0 4"
             ></a-entity>
-            <!-- <a-entity
+            <a-entity
             gltf-model="#tuna"
             scale="0.25 0.25 0.25"
             animation-mixer="clip: *; timeScale: 0.5;"
             rotation="-90 0 0"
             position="0 0 4"
-            ></a-entity> -->
+            ></a-entity>
             <a-entity
             gltf-model="#salmon"
             scale="0.25 0.25 0.25"
@@ -108,13 +108,13 @@
             rotation="-90 0 0"
             position="0 0 4"
             ></a-entity>
-            <a-entity
+            <!-- <a-entity
             gltf-model="#kelp"
             scale="0.25 0.25 0.25"
             animation-mixer="clip: *;"
             rotation="-90 0 0"
             position="0 0 4"
-            ></a-entity>
+            ></a-entity> -->
             <!-- <a-entity
             gltf-model="#waves"
             scale="0.25 0.25 0.25"
