@@ -7,8 +7,6 @@
   </head>
   <body>
     <a-scene
-      embedded
-      artoolkit
       loading-screen="dotsColor: #0072BC; backgroundColor: white;"
       arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .75;"
       vr-mode-ui="enabled: false"
@@ -55,13 +53,13 @@
         <a-entity
           id="bottle-entity"
           gltf-model="#bottle"
-          scale="30 30 30"
+          scale="25 25 25"
           rotation="-90 0 0"
           position="0 0 4"
           ></a-entity>
         <a-entity
           gltf-model="#jellyfish"
-          scale="0.45 0.45 0.45"
+          scale="0.4 0.4 0.4"
           animation-mixer="clip: *; timeScale: 1; loop: pingpong;"
           jellyanim
           rotation="-90 0 0"
@@ -70,41 +68,41 @@
         <a-entity
           id="ocean-floor-entity"
           gltf-model="#ocean-floor"
-          scale="30 30 30"
+          scale="25 25 25"
           rotation="-90 0 0"
           position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#trout"
-          scale="0.3 0.3 0.3"
+          scale="0.25 0.25 0.25"
           animation-mixer="clip: *; timeScale: 0.5;"
           rotation="-90 0 0"
           position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#tuna"
-          scale="0.3 0.3 0.3"
+          scale="0.25 0.25 0.25"
           animation-mixer="clip: *; timeScale: 0.5;"
           rotation="-90 0 0"
           position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#salmon"
-          scale="0.3 0.3 0.3"
+          scale="0.25 0.25 0.25"
           animation-mixer="clip: *; timeScale: 0.5;"
           rotation="-90 0 0"
           position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#kelp"
-          scale="0.3 0.3 0.3"
+          scale="0.25 0.25 0.25"
           animation-mixer="clip: *;"
           rotation="-90 0 0"
           position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#waves"
-          scale="0.3 0.3 0.3"
+          scale="0.25 0.25 0.25"
           animation-mixer="clip: *; loop: pingpong; timeScale: 0.6;"
           rotation="-90 0 0"
           position="0 0 4"
