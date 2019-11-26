@@ -9,6 +9,7 @@
   <body>
     <a-scene
       artoolkit
+      embedded
       arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .6;"
     >
       <a-assets timeout="10000">
@@ -18,31 +19,33 @@
           id="video-test"
           src="./objects/testVideo.mp4"
         ></video>
+        <img id="play-button" src="./icons/Play01.png">
         <!-- <video preload="auto" crossorigin="anonymous" id="video-test" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtestVideo.mp4"></video> -->
       </a-assets>
-      <a-cursor position="0 0 0"></a-cursor>
+      <!-- <a-cursor position="0 0 0"></a-cursor> -->
+      <a-entity id="cursor" cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
       <a-marker-camera type="pattern" url="./patterns/pattern-Gin.patt">
         <a-video
-          class="collidable"
+          class="clickable"
+          visible="false"
           width="1.6"
           height="0.9"
           rotation="-90"
           src="#video-test"
         ></a-video>
+        <a-plane class="clickable" src="#play-button" material="repeat: 0 0;" width="1.6" height="0.9" rotation="-90"></a-plane>
       </a-marker-camera>
       <!-- <a-entity camera></a-entity> -->
     </a-scene>
     <script>
       var video = document.querySelector('video')
-      var cursor = document.querySelector('a-cursor')
+      var sceneVideo = document.querySelector('a-video')
+      var cursor = document.getElementById('cursor')
+      var playButton = document.querySelector('a-plane')
 
-      video.addEventListener('loadeddata', function() {
-        console.log('data loaded')
-      })
-      video.addEventListener('progress', function() {
-        console.log('progress')
-      })
       cursor.addEventListener('click', function() {
+        sceneVideo.setAttribute('visible', 'true')
+        playButton.setAttribute('visible', 'false')
         video.play()
       })
     </script>
