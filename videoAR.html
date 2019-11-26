@@ -11,6 +11,7 @@
       artoolkit
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .6;"
+      loading-screen="dotsColor: #0072BC; backgroundColor: white;"
     >
       <a-assets timeout="10000">
         <video
@@ -23,7 +24,7 @@
         <!-- <video preload="auto" crossorigin="anonymous" id="video-test" src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtestVideo.mp4"></video> -->
       </a-assets>
       <!-- <a-cursor position="0 0 0"></a-cursor> -->
-      <a-entity id="cursor" cursor raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
+      <a-entity id="cursor" cursor="rayOrigin: mouse;" raycaster="far: 20; interval: 1000; objects: .clickable"></a-entity>
       <a-marker-camera type="pattern" url="./patterns/pattern-Gin.patt">
         <a-video
           class="clickable"
@@ -33,7 +34,7 @@
           rotation="-90"
           src="#video-test"
         ></a-video>
-        <a-plane class="clickable" src="#play-button" material="repeat: 0 0;" width="1.6" height="0.9" rotation="-90"></a-plane>
+        <a-plane class="clickable" src="#play-button" width="1" height="1" rotation="-90"></a-plane>
       </a-marker-camera>
       <!-- <a-entity camera></a-entity> -->
     </a-scene>
