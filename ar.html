@@ -9,13 +9,13 @@
       <!-- sourceType: webcam;  -->
     <a-scene
       embedded
-      loading-screen="dotsColor: #0072BC; backgroundColor: white;"
+      loading-screen="dotsColor: white; backgroundColor: #0072BC;"
       arjs="
         debugUIEnabled: false; 
         patternRatio: .75; 
         sourceType: webcam; 
         detectionMode: mono; 
-        maxDetectionRate: 30; 
+        maxDetectionRate: 10; 
         canvasWidth: 240; 
         canvasHeight: 180'"
       vr-mode-ui="enabled: false"
@@ -59,7 +59,7 @@
         ></a-asset-item>
       </a-assets>
       <!-- preset="hiro" -->
-      <a-marker
+      <a-marker-camera
         type="pattern"
         url="./patterns/pattern-KPMGShell_01.patt"
         smooth
@@ -123,8 +123,8 @@
             position="0 0 4"
           ></a-entity>
         </a-plane>
-      </a-marker>
-      <a-entity camera></a-entity>
+      </a-marker-camera>
+      <!-- <a-entity camera></a-entity> -->
     </a-scene>
     <audio id="voice-over">
       <source src="./objects/KPMG.wav" />
