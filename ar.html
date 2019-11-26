@@ -7,21 +7,22 @@
   </head>
   <body>
     <a-scene
+      embedded
       artoolkit
-      fog
+      loading-screen="dotsColor: #0072BC; backgroundColor: white;"
       arjs="sourceType: webcam; debugUIEnabled: false; patternRatio: .6;"
+      vr-mode-ui="enabled: false"
     >
       <a-assets>
-        <video id="video-test" autoplay src="./objects/testVideo.mp4"></video>
-        <!-- <a-asset-item
+        <a-asset-item
           id="bottle"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FSM_Bottle.glb"
-        ></a-asset-item> -->
-        <!-- <a-asset-item
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FBottle.glb"
+        ></a-asset-item>
+        <a-asset-item
           id="jellyfish"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2Fjellyfishsolo2.gltf"
-        ></a-asset-item> -->
-        <!-- <a-asset-item
+        ></a-asset-item>
+        <a-asset-item
           id="tuna"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtunaFixed.gltf"
         ></a-asset-item>
@@ -44,62 +45,69 @@
         <a-asset-item
           id="kelp"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FKelpFinal.gltf?v=1574718312130"
-        ></a-asset-item> -->
+        ></a-asset-item>
       </a-assets>
       <a-marker
         type="pattern"
         url="./patterns/pattern-Gin.patt"
       >
-      <a-video src="#video-test" width="3" height="1.5"></a-video>
-      <a-box color="yellow"></a-box>
-        <!-- <a-entity
+        <a-entity
           id="bottle-entity"
           gltf-model="#bottle"
-          scale="10 10 10"
+          scale="30 30 30"
           rotation="-90 0 0"
-          ></a-entity> -->
-        <!-- <a-entity
+          position="0 0 4"
+          ></a-entity>
+        <a-entity
           gltf-model="#jellyfish"
-          scale="0.15 0.15 0.15"
+          scale="0.45 0.45 0.45"
           animation-mixer="clip: *; timeScale: 1; loop: pingpong;"
           jellyanim
           rotation="-90 0 0"
-          ></a-entity> -->
-        <!-- <a-entity
+          position="0 0 4"
+          ></a-entity>
+        <a-entity
+          id="ocean-floor-entity"
           gltf-model="#ocean-floor"
-          scale="10 10 10"
+          scale="30 30 30"
           rotation="-90 0 0"
+          position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#trout"
-          scale="0.1 0.1 0.1"
+          scale="0.3 0.3 0.3"
           animation-mixer="clip: *; timeScale: 0.5;"
           rotation="-90 0 0"
+          position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#tuna"
-          scale="0.1 0.1 0.1"
+          scale="0.3 0.3 0.3"
           animation-mixer="clip: *; timeScale: 0.5;"
           rotation="-90 0 0"
+          position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#salmon"
-          scale="0.1 0.1 0.1"
+          scale="0.3 0.3 0.3"
           animation-mixer="clip: *; timeScale: 0.5;"
           rotation="-90 0 0"
+          position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#kelp"
-          scale="0.1 0.1 0.1"
+          scale="0.3 0.3 0.3"
           animation-mixer="clip: *;"
           rotation="-90 0 0"
+          position="0 0 4"
           ></a-entity>
           <a-entity
           gltf-model="#waves"
-          scale="0.1 0.1 0.1"
+          scale="0.3 0.3 0.3"
           animation-mixer="clip: *; loop: pingpong; timeScale: 0.6;"
           rotation="-90 0 0"
-        ></a-entity> -->
+          position="0 0 4"
+        ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -107,37 +115,36 @@
       <source src="./objects/KPMG_VO.wav" />
     </audio>
     <script>
-      // var voiceOver = document.getElementById('voice-over')
-      // var bottle = document.querySelector("#bottle-entity")
-      // console.log(bottle.components.data)
-      // AFRAME.registerComponent('registerevents', {
-      //   init: function() {
-      //     var marker = this.el
+      var voiceOver = document.getElementById('voice-over')
 
-      //     marker.addEventListener('markerFound', function() {
-      //       console.log('Marker Found!')
-      //       voiceOver.play()
-      //       marker.parentNode.removeChild(marker)
-      //     })
-      //   },
-      // })
-      // AFRAME.registerComponent('jellyanim', {
-      //   init: function() {
-      //     var jelly = this.el
+      AFRAME.registerComponent('registerevents', {
+        init: function() {
+          var marker = this.el
 
-      //     jelly.addEventListener('animation-loop', function() {
-      //       jelly.components['animation-mixer'].data.timeScale == 1
-      //         ? jelly.setAttribute('animation-mixer', { timeScale: 0.5 })
-      //         : jelly.setAttribute('animation-mixer', { timeScale: 1 })
-      //     })
-      //   },
-      // })
-      // AFRAME.registerComponent('bottletest', {
-      //   init: function() {
-      //     var bottle = this.el
-      //     console.log(bottle.components['gltf-model'])
-      //   },
-      // })
+          marker.addEventListener('markerFound', function() {
+            console.log('Marker Found!')
+            voiceOver.play()
+            marker.parentNode.removeChild(marker)
+          })
+        },
+      })
+      AFRAME.registerComponent('jellyanim', {
+        init: function() {
+          var jelly = this.el
+
+          jelly.addEventListener('animation-loop', function() {
+            jelly.components['animation-mixer'].data.timeScale == 1
+              ? jelly.setAttribute('animation-mixer', { timeScale: 0.5 })
+              : jelly.setAttribute('animation-mixer', { timeScale: 1 })
+          })
+        },
+      })
+      AFRAME.registerComponent('bottletest', {
+        init: function() {
+          var bottle = this.el
+          console.log(bottle.components['gltf-model'])
+        },
+      })
     </script>
   </body>
 </html>
