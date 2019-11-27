@@ -14,3 +14,11 @@ Web based AR activation using [AR.js](https://github.com/jeromeetienne/AR.js) fo
 ## Customization
 
 In ar.html and videoAR.html, within the `<a-marker-camera>` element, change the `url` if you would like to use a custom marker pattern. Also make sure change `<a-scene arjs="patternRatio: x">` to match your custom marker.
+
+## Known Issues
+- Stability on ar.html is very low. Need to optimize textures, models, and marker.
+- Landing page currently only works on mobile. Update for tablet and a "Please switch to mobile" message for desktop
+- Touch interaction play for videoAR.html isn't working at all. Video autoplays.
+- webvr-pollyfill.js: Sensor could not be read
+- Sound recording is poor, very reverb-y
+- Ocean floor needs texture lightened
