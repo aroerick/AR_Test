@@ -1,7 +1,0 @@
-newmtl initialShadingGroup
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 0.36 0.36 0.36
-map_Kd https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FoutJellyfish.png?v=1573686303402
-Ni 1.00

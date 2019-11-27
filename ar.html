@@ -6,13 +6,12 @@
     <title>KPMG Blue Ocean Gin AR</title>
   </head>
   <body>
-      <!-- sourceType: webcam;  -->
     <a-scene
       embedded
       loading-screen="dotsColor: #0072BC; backgroundColor: white;"
       arjs="
         debugUIEnabled: false; 
-        patternRatio: .5; 
+        patternRatio: .75; 
         sourceType: webcam; 
         detectionMode: mono; 
         maxDetectionRate: 10; 
@@ -45,10 +44,6 @@
           id="waves"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FgoodloopWaves.gltf"
         ></a-asset-item>
-        <!-- <a-asset-item
-          id="waves"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FWavesNew123456798.gltf"
-        ></a-asset-item> -->
         <a-asset-item
           id="ocean-floor"
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FOceanFloorPNG.glb"
@@ -58,10 +53,9 @@
           src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FKelpFinal.gltf"
         ></a-asset-item>
       </a-assets>
-      <!-- type="pattern"
-      url="./patterns/pattern-KPMGShell_01.patt" -->
       <a-marker-camera
-        preset="hiro"
+        type="pattern"
+        url="./assets/patterns/pattern-KPMGShell_01.patt"
         smooth
       >
         <a-plane material="color: clear" scale="1 1 1" position="0 -1 -1">
@@ -126,7 +120,7 @@
       </a-marker-camera>
     </a-scene>
     <audio id="voice-over">
-      <source src="./objects/KPMG.wav" />
+      <source src="./assets/sound/KPMG_VO_Edited.wav" />
     </audio>
     <script>
       var voiceOver = document.getElementById('voice-over')
