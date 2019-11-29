@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <meta name="viewport" content="width=device-width">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/reset.css">
-  <link rel="stylesheet" href="./styles/main.css">
+  <meta name="viewport" content="width=device-width" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:400i,700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
   <body>
     <div id="main-container" hidden>
       <div id="image-container">
-        <img id="img-top" src="./assets/images/KPMG_Splash_Top.png">
+        <img id="img-top" src="./assets/images/KPMG_Splash_Top.png" />
         <div id="image-buffer"></div>
-        <img id="img-bot" src="./assets/images/KPMG_Splash_Bot.png">
+        <img id="img-bot" src="./assets/images/KPMG_Splash_Bot.png" />
       </div>
       <div id="text-container">
         <h1 class="text">AR Activated Bottle</h1>
@@ -20,26 +23,45 @@
         <button id="begin" type="button">Begin</button>
       </a>
       <div id="background-container">
-        <img id="img-mid" src="./assets/images/KPMG_Splash_Mid.png" width="100%">
+        <img
+          id="img-mid"
+          src="./assets/images/KPMG_Splash_Mid.png"
+          width="100%"
+        />
         <h2 class="text">Lay hangtag flat on front of bottle</h2>
         <h2 class="text">Find the marker with your phone</h2>
       </div>
     </div>
+    <div id="desktop">
+      <h3 class="text">Please come back on your mobile device!</h3>
+    </div>
   </body>
   <script>
-    var continueButton = document.getElementById("continue");
-    var beginButton = document.getElementById("begin");
-    var textContainer = document.getElementById("text-container");
-    var imageBuffer = document.getElementById("image-buffer");
-    var backgroundContainer = document.getElementById("background-container");
-    var width = document.body.clientWidth;
+    var continueButton = document.getElementById('continue')
+    var beginButton = document.getElementById('begin')
+    var textContainer = document.getElementById('text-container')
+    var imageBuffer = document.getElementById('image-buffer')
+    var backgroundContainer = document.getElementById('background-container')
+    var mainContainer = document.getElementById('main-container')
+    var desktop = document.getElementById('desktop')
+    var width = document.body.clientWidth
+    var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
+
+    if (!isMobile) {
+      desktop.style.display = 'block'
+      mainContainer.style.display = 'none'
+    }
 
     continueButton.onclick = function() {
-      continueButton.style.display = "none";
-      beginButton.style.display = "initial";
-      textContainer.style.bottom = "-100%";
-      width >= 700 ? imageBuffer.style.height = "410px" : imageBuffer.style.height = "350px";
-      width >= 700 ? backgroundContainer.style.top = "-250px" : backgroundContainer.style.top = "-175px";
+      continueButton.style.display = 'none'
+      beginButton.style.display = 'initial'
+      textContainer.style.bottom = '-100%'
+      width >= 700
+        ? (imageBuffer.style.height = '410px')
+        : (imageBuffer.style.height = '350px')
+      width >= 700
+        ? (backgroundContainer.style.top = '-250px')
+        : (backgroundContainer.style.top = '-175px')
     }
   </script>
 </html>
