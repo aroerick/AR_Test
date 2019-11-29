@@ -5,13 +5,11 @@
   <link rel="stylesheet" href="./styles/main.css">
   <body>
     <div id="main-container" hidden>
-      <img id="img-top" src="./assets/images/KPMG_Splash_top.png" width="100%">
-      <div id="background-container">
-        <img id="img-mid" src="./assets/images/KPMG_Splash_Mid.png" width="100%">
-        <h2 class="text">Lay hangtag flat on front of bottle</h2>
-        <h2 class="text">Find the marker with your phone</h2>
+      <div id="image-container">
+        <img id="img-top" src="./assets/images/KPMG_Splash_Top.png" width="100%">
+        <div id="image-buffer"></div>
+        <img id="img-bot" src="./assets/images/KPMG_Splash_Bot.png" width="100%">
       </div>
-      <img id="img-bot" src="./assets/images/KPMG_Splash_Bot.png" width="100%">
       <div id="text-container">
         <h1 class="text">AR Activated Bottle</h1>
         <p class="text">experience best enjoyed with sound</p>
@@ -20,20 +18,25 @@
       <a href="/ar.html">
         <button id="begin" type="button">Begin</button>
       </a>
+      <div id="background-container">
+        <img id="img-mid" src="./assets/images/KPMG_Splash_Mid.png" width="100%">
+        <h2 class="text">Lay hangtag flat on front of bottle</h2>
+        <h2 class="text">Find the marker with your phone</h2>
+      </div>
     </div>
   </body>
   <script>
     var continueButton = document.getElementById("continue");
     var beginButton = document.getElementById("begin");
     var textContainer = document.getElementById("text-container");
-    var imageBot = document.getElementById("img-bot");
+    var imageBuffer = document.getElementById("image-buffer");
     var backgroundContainer = document.getElementById("background-container");
 
     continueButton.onclick = function() {
       continueButton.style.display = "none";
       beginButton.style.display = "initial";
       textContainer.style.bottom = "-100%";
-      imageBot.style.top = "1200px";
+      imageBuffer.style.height = "715px";
       backgroundContainer.style.top = "-490px";
     }
   </script>

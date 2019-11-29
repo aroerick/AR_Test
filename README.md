@@ -4,7 +4,7 @@
 
 This project is a collaboration between the students of the VR/AR Developement and Design program at Vancouver Film School and KPMG.
 
-Web based AR activation using [AR.js](https://github.com/jeromeetienne/AR.js) for marker tracking and additional components for [A-Frame](https://aframe.io/), used to display 3D objects through webXR. 
+Web based AR activation using [AR.js](https://github.com/jeromeetienne/AR.js) for marker tracking and additional components for [A-Frame](https://aframe.io/), used to display 3D objects through webXR. Assets hosted through [Glitch](https://glitch.com/edit/#!/continuous-ocarina).
 
 ## Pages
 - index: Landing page, splash screen to ensure people have sound enabled and are provided a pleasent user experience

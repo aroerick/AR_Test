@@ -11,7 +11,7 @@
       loading-screen="dotsColor: #0072BC; backgroundColor: white;"
       arjs="
         debugUIEnabled: false; 
-        patternRatio: .75; 
+        patternRatio: .9; 
         sourceType: webcam; 
         detectionMode: mono; 
         maxDetectionRate: 10; 
@@ -55,10 +55,10 @@
       </a-assets>
       <a-marker-camera
         type="pattern"
-        url="./assets/patterns/pattern-KPMGShell_01.patt"
+        url="./assets/patterns/pattern-KPMG-thin-border.patt"
         smooth
       >
-        <a-plane material="color: clear" scale="1 1 1" position="0 -1 -1">
+        <a-plane scale="1 1 1" position="0 -1 -1">
           <a-entity
             id="bottle-entity"
             gltf-model="#bottle"
