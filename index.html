@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <meta name="viewport" content="width=device-width">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/main.css">
@@ -31,13 +32,14 @@
     var textContainer = document.getElementById("text-container");
     var imageBuffer = document.getElementById("image-buffer");
     var backgroundContainer = document.getElementById("background-container");
+    var width = document.body.clientWidth;
 
     continueButton.onclick = function() {
       continueButton.style.display = "none";
       beginButton.style.display = "initial";
       textContainer.style.bottom = "-100%";
-      imageBuffer.style.height = "715px";
-      backgroundContainer.style.top = "-490px";
+      width >= 700 ? imageBuffer.style.height = "410px" : imageBuffer.style.height = "350px";
+      width >= 700 ? backgroundContainer.style.top = "-250px" : backgroundContainer.style.top = "-175px";
     }
   </script>
 </html>
