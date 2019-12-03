@@ -11,10 +11,10 @@
       loading-screen="dotsColor: #0072BC; backgroundColor: white;"
       arjs="
         debugUIEnabled: false; 
-        patternRatio: .9; 
+        patternRatio: .87; 
         sourceType: webcam; 
         detectionMode: mono; 
-        maxDetectionRate: 10; 
+        maxDetectionRate: 30; 
         canvasWidth: 240; 
         canvasHeight: 180"
       vr-mode-ui="enabled: false"
@@ -30,33 +30,34 @@
         ></a-asset-item>
         <a-asset-item
           id="tuna"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtunaFixed.gltf"
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtunaModel.gltf"
         ></a-asset-item>
         <a-asset-item
           id="trout"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FTroutFinal.gltf"
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FtroutModel.gltf"
         ></a-asset-item>
         <a-asset-item
           id="salmon"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FSalmonFixed.gltf"
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FsalmonModel.gltf"
         ></a-asset-item>
         <a-asset-item
           id="waves"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FgoodloopWaves.gltf"
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FwavesModel.gltf"
         ></a-asset-item>
         <a-asset-item
           id="ocean-floor"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FOceanFloorPNG.glb"
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FoceanFloorModel.glb"
         ></a-asset-item>
         <a-asset-item
           id="kelp"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FKelpFinal.gltf"
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FkelpModel.glb"
         ></a-asset-item>
       </a-assets>
-      <a-marker-camera
+      <a-marker
         type="pattern"
-        url="./assets/patterns/pattern-KPMG-thin-border.patt"
+        url="./assets/patterns/pattern-QR_Marker.patt"
         smooth
+        registerevents
       >
         <a-plane scale="1 1 1" position="0 -1 -1">
           <a-entity
@@ -117,7 +118,8 @@
             position="0 0 4"
           ></a-entity>
         </a-plane>
-      </a-marker-camera>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
     <audio id="voice-over">
       <source src="./assets/sound/KPMG_VO_Edited.wav" />
@@ -130,7 +132,7 @@
           var marker = this.el
 
           marker.addEventListener('markerFound', function() {
-            console.log('Marker Found!')
+
             voiceOver.play()
           })
         },
@@ -144,12 +146,6 @@
               ? jelly.setAttribute('animation-mixer', { timeScale: 0.5 })
               : jelly.setAttribute('animation-mixer', { timeScale: 1 })
           })
-        },
-      })
-      AFRAME.registerComponent('bottletest', {
-        init: function() {
-          var bottle = this.el
-          console.log(bottle.components['gltf-model'])
         },
       })
     </script>
