@@ -23,4 +23,4 @@ All models are currently hosted through a personal [Glitch](https://glitch.com/)
 
 ## Known Issues
 - Touch interaction play for videoAR.html isn't working properly. Video autoplays. Not huge issue, experience still runs.
-- Sound recording is poor, very reverb-y
+- Sound recording is poor, very reverb-y. Attempted to mask through edit, included unedited version as well.
