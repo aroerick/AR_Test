@@ -20,7 +20,10 @@
       </div>
       <button id="continue" type="button">Continue</button>
       <a href="/ar.html">
-        <button id="begin" type="button">Begin</button>
+        <button id="ex-one" type="button">Experience 1</button>
+      </a>
+      <a href="/videoAR.html">
+        <button id="ex-two" type="button">Experience 2</button>
       </a>
       <div id="background-container">
         <img
@@ -38,7 +41,8 @@
   </body>
   <script>
     var continueButton = document.getElementById('continue')
-    var beginButton = document.getElementById('begin')
+    var beginOneButton = document.getElementById('ex-one')
+    var beginTwoButton = document.getElementById('ex-two')
     var textContainer = document.getElementById('text-container')
     var imageBuffer = document.getElementById('image-buffer')
     var backgroundContainer = document.getElementById('background-container')
@@ -47,14 +51,15 @@
     var width = document.body.clientWidth
     var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
 
-    if (!isMobile) {
-      desktop.style.display = 'block'
-      mainContainer.style.display = 'none'
-    }
+    // if (!isMobile) {
+    //   desktop.style.display = 'block'
+    //   mainContainer.style.display = 'none'
+    // }
 
     continueButton.onclick = function() {
       continueButton.style.display = 'none'
-      beginButton.style.display = 'initial'
+      beginOneButton.style.display = 'initial'
+      beginTwoButton.style.display = 'initial'
       textContainer.style.bottom = '-100%'
       width >= 700
         ? (imageBuffer.style.height = '410px')

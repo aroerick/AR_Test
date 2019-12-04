@@ -37,7 +37,7 @@ button {
   font-weight: 700;
   letter-spacing: 10px;
   text-transform: uppercase;
-  padding: 15px 5px 15px 15px;
+  padding: 15px;
   position: absolute;
   bottom: 5%;
   z-index: 5;
@@ -95,7 +95,12 @@ button {
   height: 130px;
   transition: height 1000ms ease-in-out;
 }
-#begin {
+#ex-one {
+  display: none;
+  bottom: 13%;
+  padding: 15px 17px;
+}
+#ex-two {
   display: none;
 }
 #desktop {
