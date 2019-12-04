@@ -51,10 +51,10 @@
     var width = document.body.clientWidth
     var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
 
-    // if (!isMobile) {
-    //   desktop.style.display = 'block'
-    //   mainContainer.style.display = 'none'
-    // }
+    if (!isMobile) {
+      desktop.style.display = 'block'
+      mainContainer.style.display = 'none'
+    }
 
     continueButton.onclick = function() {
       continueButton.style.display = 'none'
