@@ -22,7 +22,7 @@
       <a-assets>
         <a-asset-item
           id="bottle"
-          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FbottleModel03.glb"
+          src="https://cdn.glitch.com/11a102fe-5f9b-4e42-bf00-82d227d6f268%2FInvBottle.glb"
         ></a-asset-item>
         <a-asset-item
           id="jellyfish"
@@ -59,13 +59,12 @@
         smooth
         registerevents
       >
-        <a-plane scale="1 1 1" position="0 -1 -1">
+        <a-plane scale="1 1 1" position="0 -1 3">
           <a-entity
             id="bottle-entity"
             gltf-model="#bottle"
             scale="25 25 25"
             rotation="-90 0 0"
-            position="0 0 4"
             ></a-entity>
           <a-entity
             gltf-model="#jellyfish"
@@ -73,49 +72,51 @@
             animation-mixer="clip: *; timeScale: 1; loop: pingpong;"
             jellyanim
             rotation="-90 0 0"
-            position="0 0 4"
+            position="-1 0 0"
+            ></a-entity>
+          <a-entity
+            gltf-model="#jellyfish"
+            scale="0.4 0.4 0.4"
+            animation-mixer="clip: *; timeScale: 0.6; loop: pingpong;"
+            jellyanim
+            rotation="-90 0 0"
+            position="1 0 0"
             ></a-entity>
           <a-entity
             id="ocean-floor-entity"
             gltf-model="#ocean-floor"
             scale="25 25 25"
             rotation="-90 0 0"
-            position="0 0 4"
             ></a-entity>
             <a-entity
             gltf-model="#trout"
             scale="0.25 0.25 0.25"
             animation-mixer="clip: *; timeScale: 0.5;"
             rotation="-90 0 0"
-            position="0 0 4"
             ></a-entity>
             <a-entity
             gltf-model="#tuna"
             scale="0.25 0.25 0.25"
             animation-mixer="clip: *; timeScale: 0.5;"
             rotation="-90 0 0"
-            position="0 0 4"
             ></a-entity>
             <a-entity
             gltf-model="#salmon"
             scale="0.25 0.25 0.25"
             animation-mixer="clip: *; timeScale: 0.5;"
             rotation="-90 0 0"
-            position="0 0 4"
             ></a-entity>
             <a-entity
             gltf-model="#kelp"
             scale="0.25 0.25 0.25"
             animation-mixer="clip: *;"
             rotation="-90 0 0"
-            position="0 0 4"
             ></a-entity>
             <a-entity
             gltf-model="#waves"
             scale="0.25 0.25 0.25"
             animation-mixer="clip: *; loop: pingpong; timeScale: 0.6;"
             rotation="-90 0 0"
-            position="0 0 4"
           ></a-entity>
         </a-plane>
       </a-marker>
@@ -142,7 +143,7 @@
           var jelly = this.el
 
           jelly.addEventListener('animation-loop', function() {
-            jelly.components['animation-mixer'].data.timeScale == 1
+            jelly.components['animation-mixer'].data.timeScale > 0.5
               ? jelly.setAttribute('animation-mixer', { timeScale: 0.5 })
               : jelly.setAttribute('animation-mixer', { timeScale: 1 })
           })
