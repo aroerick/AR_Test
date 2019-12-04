@@ -51,10 +51,10 @@
     var width = document.body.clientWidth
     var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)
 
-    if (!isMobile) {
-      desktop.style.display = 'block'
-      mainContainer.style.display = 'none'
-    }
+    // if (!isMobile) {
+    //   desktop.style.display = 'block'
+    //   mainContainer.style.display = 'none'
+    // }
 
     continueButton.onclick = function() {
       continueButton.style.display = 'none'
@@ -62,11 +62,11 @@
       beginTwoButton.style.display = 'initial'
       textContainer.style.bottom = '-100%'
       width >= 700
-        ? (imageBuffer.style.height = '410px')
-        : (imageBuffer.style.height = '350px')
+        ? (imageBuffer.style.minHeight = '40%')
+        : (imageBuffer.style.minHeight = '42%')
       width >= 700
-        ? (backgroundContainer.style.top = '-250px')
-        : (backgroundContainer.style.top = '-175px')
+        ? (backgroundContainer.style.top = '-19%')
+        : (backgroundContainer.style.top = '-24%')
     }
   </script>
 </html>

@@ -19,7 +19,8 @@ h1 {
 }
 h2 {
   color: black;
-  font-size: 16px;
+  font-size: 12px;
+  margin: 0 5%;
   text-transform: uppercase;
   line-height: 1.2;
 }
@@ -33,13 +34,13 @@ button {
   background-color: white;
   border: 3px solid black;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 10px;
+  letter-spacing: 6px;
   text-transform: uppercase;
   padding: 15px;
   position: absolute;
-  bottom: 5%;
+  bottom: 1%;
   z-index: 5;
   left: 50%;
   transform: translate(-50%);
@@ -55,10 +56,12 @@ button {
   flex-direction: column;
 }
 #image-container {
+  position: absolute;
   align-items: center;
   display: flex;
   flex-direction: column;
   z-index: 1;
+  height: 100%;
 }
 #text-container {
   display: flex;
@@ -83,7 +86,6 @@ button {
   z-index: -1;
   width: 100%;
   transition: top 1000ms ease-in-out;
-  /* transition: width 1000ms ease-in-out; */
 }
 #img-top {
   width: 100%;
@@ -92,16 +94,18 @@ button {
   width: 100%;
 }
 #image-buffer {
-  height: 130px;
-  transition: height 1000ms ease-in-out;
+  min-height: 18%;
+  transition: min-height 1000ms ease-in-out;
 }
 #ex-one {
   display: none;
-  bottom: 13%;
+  bottom: 10%;
   padding: 15px 17px;
+  min-width: 225px;
 }
 #ex-two {
   display: none;
+  min-width: 225px;
 }
 #desktop {
   display: none;
