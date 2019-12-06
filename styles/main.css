@@ -1,3 +1,6 @@
+html {
+  overflow: hidden;
+}
 body {
   max-width: 1024px;
   min-width: 325px;
@@ -13,7 +16,8 @@ h1 {
   text-justify: inter-character;
   line-height: 1.3;
   text-transform: uppercase;
-  padding: 0 0 40px 8px;
+  padding-left: 5px;
+  padding-bottom: 10px;
   margin: 0 auto;
   max-width: 300px;
 }
@@ -76,7 +80,7 @@ button {
   transform: translate(-50%);
   transition: bottom 1000ms ease-in-out;
 }
-#background-container {
+/* #background-container {
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -86,7 +90,7 @@ button {
   z-index: -1;
   width: 100%;
   transition: top 1000ms ease-in-out;
-}
+} */
 #img-top {
   width: 100%;
 }
@@ -94,8 +98,17 @@ button {
   width: 100%;
 }
 #image-buffer {
-  min-height: 18%;
-  transition: min-height 1000ms ease-in-out;
+  min-height: 30%;
+  width: 100%;
+  background-image: url(../assets/images/KPMG_Splash_Mid.png);
+  background-size: 100% auto;
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-top: -5%;
+  margin-bottom: -9%;
+  z-index: -1;
+  transition: all 1000ms ease-in-out;
 }
 #ex-one {
   display: none;

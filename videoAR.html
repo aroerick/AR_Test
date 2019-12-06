@@ -17,10 +17,10 @@
       maxDetectionRate: 30; 
       canvasWidth: 240; 
       canvasHeight: 180"
-      loading-screen="dotsColor: #0072BC; backgroundColor: white;"
+      loading-screen="dotsColor: white; backgroundColor: #005EB8;"
       vr-mode-ui="enabled: false"
       >
-      <a-assets>
+      <a-assets timeout="6000">
         <video
           preload="auto"
           crossorigin="anonymous"
@@ -46,7 +46,7 @@
           rotation="-90"
           src="#video-test"
         ></a-video>
-        <a-plane class="clickable" src="#play-button" width="1" height="1" rotation="-90"></a-plane>
+        <a-plane class="clickable" src="#play-button" width="1" height="1" rotation="-90" position="0 1 0"></a-plane>
       </a-marker-camera>
     </a-scene>
     <script>

@@ -25,15 +25,15 @@
       <a href="/videoAR.html">
         <button id="ex-two" type="button">Experience 2</button>
       </a>
-      <div id="background-container">
+      <!-- <h2 class="text">Lay hangtag flat on front of bottle</h2>
+      <h2 class="text">Find the marker with your phone</h2> -->
+      <!-- <div id="background-container">
         <img
           id="img-mid"
           src="./assets/images/KPMG_Splash_Mid.png"
           width="100%"
         />
-        <h2 class="text">Lay hangtag flat on front of bottle</h2>
-        <h2 class="text">Find the marker with your phone</h2>
-      </div>
+      </div> -->
     </div>
     <div id="desktop">
       <h3 class="text">Please come back on your mobile device!</h3>
@@ -61,12 +61,12 @@
       beginOneButton.style.display = 'initial'
       beginTwoButton.style.display = 'initial'
       textContainer.style.bottom = '-100%'
-      width >= 700
-        ? (imageBuffer.style.minHeight = '40%')
-        : (imageBuffer.style.minHeight = '42%')
-      width >= 700
-        ? (backgroundContainer.style.top = '-19%')
-        : (backgroundContainer.style.top = '-24%')
+      imageBuffer.style.backgroundPosition = '100% 100%'
+      imageBuffer.style.marginBottom = '0px'
+      imageBuffer.style.minHeight = '45%'
+      // width >= 700
+      //   ? (backgroundContainer.style.top = '-19%')
+      //   : (backgroundContainer.style.top = '-24%')
     }
   </script>
 </html>
